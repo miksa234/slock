@@ -4,9 +4,9 @@ static const char *group = "wheel";
 
 static const char *colorname[NUMCOLS] = {
 	[BACKGROUND] =   "black",     /* after initialization */
-	[INIT] =   "#2d2d2d",     /* after initialization */
+	[INIT] =   "#632328",     /* after initialization */
 	[INPUT] =  "#632328",   /* during input */
-	[FAILED] = "#a6a28c",   /* wrong password */
+	[FAILED] = "#2d2d2d",   /* wrong password */
 };
 
 /* treat a cleared input like a wrong password (color) */
@@ -16,9 +16,9 @@ static const int failonclear = 1;
 static const int monitortime = 5;
 
 /* insert grid pattern with scale 1:1, the size can be changed with logosize */
-static const int logosize = 20;
-static const int logow = 12;	/* grid width and height for right center alignment*/
-static const int logoh = 20;
+static const int logosize = 26;
+static const int logow = 10;	/* grid width and height for right center alignment*/
+static const int logoh = 16;
 
 /*static XRectangle rectangles[9] = {*/
 	/* x	y	w	h */
@@ -34,7 +34,6 @@ static const int logoh = 20;
 
 };
 */
-
 static XRectangle rectangles[9] = {
 	/* x	y	w	h */
 	{ 0,	4,	1,	2 },
