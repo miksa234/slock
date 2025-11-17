@@ -1,17 +1,17 @@
 /* user and group to drop privileges to */
-static const char *user  = "miksa";
-static const char *group = "wheel";
+static const char *user  = "mika";
+static const char *group = "mika";
 
 static const char *colorname[NUMCOLS] = {
 	[BACKGROUND] =   "black",     /* after initialization */
-	[INIT] =   "#632328",     /* after initialization */
-	[INPUT] =  "#632328",   /* during input */
+	[INIT] =   "#A96C8A",     /* after initialization */
+	[INPUT] =  "#A96C8A",   /* during input */
 	[FAILED] = "#2d2d2d",   /* wrong password */
-    [CAPS] = "red",         /* CapsLock on */
+    [CAPS] = "#6CA98A",         /* CapsLock on */
 };
 
 /* treat a cleared input like a wrong password (color) */
-static const int failonclear = 1;
+static const int failonclear = 0;
 
 /* time in seconds before the monitor shuts down */
 static const int monitortime = 5;
