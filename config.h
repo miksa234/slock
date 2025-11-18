@@ -11,16 +11,46 @@ static const char *colorname[NUMCOLS] = {
 };
 
 /* treat a cleared input like a wrong password (color) */
-static const int failonclear = 1;
+static int failonclear = 1;
 
-static const int monitortime = 600;
+static int monitortime = 600;
 
-static const int logosize = 50;
-static const int logow = 9; /* Grid width and height for right center alignment*/
-static const int logoh = 6;
+static int logosize = 50;
+static int logow = 9; /* Grid width and height for right center alignment*/
+static int logoh = 6;
 
-static XRectangle rectangles[9] = {
+/* Setup specific draw on two monitors  should be 0 false or 1 true */
+
+static int draw_on_two= 1;
+
+static XRectangle rectangles_double[18] = {
 	/* x	y	w	h */
+	{ 0,	4,	1,	2 },
+	{ 1,	2,	1,	2 },
+	{ 2,	0,	1,	2 },
+	{ 4,	0,	1,	6 },
+	{ 4,	0,	3,	1 },
+	{ 4,	5,	3,	1 },
+	{ 6,	0,	1,	6 },
+    //
+	{ -40,	4,	1,	2 },
+	{ -39,	2,	1,	2 },
+	{ -38,	0,	1,	2 },
+	{ -36,	0,	1,	6 },
+	{ -36,	0,	3,	1 },
+	{ -36,	5,	3,	1 },
+	{ -34,	0,	1,	6 },
+};
+
+static XRectangle rectangles[18] = {
+	/* x	y	w	h */
+	{ 0,	4,	1,	2 },
+	{ 1,	2,	1,	2 },
+	{ 2,	0,	1,	2 },
+	{ 4,	0,	1,	6 },
+	{ 4,	0,	3,	1 },
+	{ 4,	5,	3,	1 },
+	{ 6,	0,	1,	6 },
 	{ 0,	4,	1,	2 },
 	{ 1,	2,	1,	2 },
 	{ 2,	0,	1,	2 },
@@ -33,20 +63,28 @@ static XRectangle rectangles[9] = {
 /*Enable blur*/
 #define BLUR
 /*Set blur radius*/
-static const int blurRadius=10;
+static int blurRadius=10;
 /*Enable Pixelation*/
 #define PIXELATION
 /*Set pixelation radius*/
-static const int pixelSize=10;
+static int pixelSize=10;
 
 /*
  * Xresources preferences to load at startup
  */
 ResourcePref resources[] = {
-		{ "color_background",   STRING,   &colorname[BACKGROUND] },
-		{ "color_init",        STRING,    &colorname[INIT] },
-		{ "color_input",        STRING,   &colorname[INPUT] },
-		{ "color_failed",       STRING,   &colorname[FAILED] },
-		{ "color_caps",       STRING,     &colorname[CAPS] },
+		{ "color_background", STRING,   &colorname[BACKGROUND] },
+		{ "color_init",       STRING,   &colorname[INIT] },
+		{ "color_input",      STRING,   &colorname[INPUT] },
+		{ "color_failed",     STRING,   &colorname[FAILED] },
+		{ "color_caps",       STRING,   &colorname[CAPS] },
+		{ "failonclear",      INTEGER,  &failonclear },
+		{ "monitortime",      INTEGER,  &monitortime },
+		{ "logosize",         INTEGER,  &logosize },
+		{ "logow",            INTEGER,  &logow },
+		{ "logoh",            INTEGER,  &logoh },
+		{ "draw_on_two",      INTEGER,  &draw_on_two },
+		{ "blurRadius",       INTEGER,  &blurRadius },
+		{ "pixelSize",        INTEGER,  &pixelSize },
 };
 

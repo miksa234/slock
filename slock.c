@@ -164,6 +164,15 @@ resizerectangles(struct lock *lock)
 {
 	int i;
 
+    if (draw_on_two == 1) {
+        memcpy(
+            rectangles,
+            rectangles_double,
+            sizeof(XRectangle)*LENGTH(rectangles)
+        );
+    }
+
+
 	for (i = 0; i < LENGTH(rectangles); i++){
 		lock->rectangles[i].x = (rectangles[i].x * logosize)
                                 + lock->xoff + ((lock->mw) / 2) - (logow / 2 * logosize);
