@@ -13,10 +13,10 @@ static const char *colorname[NUMCOLS] = {
 /* treat a cleared input like a wrong password (color) */
 static const int failonclear = 1;
 
-static const int monitortime = 5;
+static const int monitortime = 600;
 
-static const int logosize = 75;
-static const int logow = 12; /* Grid width and height for right center alignment*/
+static const int logosize = 50;
+static const int logow = 9; /* Grid width and height for right center alignment*/
 static const int logoh = 6;
 
 static XRectangle rectangles[9] = {
@@ -35,6 +35,18 @@ static XRectangle rectangles[9] = {
 /*Set blur radius*/
 static const int blurRadius=10;
 /*Enable Pixelation*/
-//#define PIXELATION
+#define PIXELATION
 /*Set pixelation radius*/
-static const int pixelSize=100;
+static const int pixelSize=10;
+
+/*
+ * Xresources preferences to load at startup
+ */
+ResourcePref resources[] = {
+		{ "color_background",   STRING,   &colorname[BACKGROUND] },
+		{ "color_init",        STRING,    &colorname[INIT] },
+		{ "color_input",        STRING,   &colorname[INPUT] },
+		{ "color_failed",       STRING,   &colorname[FAILED] },
+		{ "color_caps",       STRING,     &colorname[CAPS] },
+};
+
