@@ -20,7 +20,7 @@ slock: ${OBJ}
 	${CC} -o $@ ${OBJ} ${LDFLAGS}
 
 clean:
-	rm -f slock ${OBJ} slock-${VERSION}.tar.gz
+	rm -f slock ${OBJ} config.h slock-${VERSION}.tar.gz
 
 dist: clean
 	mkdir -p slock-${VERSION}

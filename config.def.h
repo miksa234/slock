@@ -13,14 +13,11 @@ static const char *colorname[NUMCOLS] = {
 /* treat a cleared input like a wrong password (color) */
 static int failonclear = 1;
 
-static int monitortime = 600;
-
 static int logosize = 50;
 static int logow = 9; /* Grid width and height for right center alignment*/
 static int logoh = 6;
 
 /* Setup specific draw on two monitors  should be 0 false or 1 true */
-
 static int draw_on_two= 1;
 
 static XRectangle rectangles_double[18] = {
@@ -79,7 +76,6 @@ ResourcePref resources[] = {
 		{ "color_failed",     STRING,   &colorname[FAILED] },
 		{ "color_caps",       STRING,   &colorname[CAPS] },
 		{ "failonclear",      INTEGER,  &failonclear },
-		{ "monitortime",      INTEGER,  &monitortime },
 		{ "logosize",         INTEGER,  &logosize },
 		{ "logow",            INTEGER,  &logow },
 		{ "logoh",            INTEGER,  &logoh },
