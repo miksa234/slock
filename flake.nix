@@ -8,8 +8,6 @@
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
     in {
-      shell = pkgs.zsh;
-
       devShells.${system}.default = pkgs.mkShell {
         # Compilers + build tools
         nativeBuildInputs = with pkgs; [
@@ -21,12 +19,17 @@
         # Libraries + headers
         buildInputs = with pkgs; [
           libx11
-          libxinerama
+          libxext
           libxrandr
+          libxcrypt
+          libxinerama
           libxft
           imlib2
-          libxcrypt
-          libxext
+          libxcb
+          xorg.libXrender
+          xorg.xorgproto
+          freetype
+          fontconfig
         ];
       };
     };
