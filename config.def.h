@@ -4,14 +4,14 @@ static const char *group = "wheel";
 
 static const char *colorname[NUMCOLS] = {
 	[BACKGROUND] =   "black",     /* after initialization */
-	[INIT] =   "#A96C8A",     /* after initialization */
+	[INIT] =   "#A16C1F",     /* after initialization */
 	[INPUT] =  "#A96C8A",   /* during input */
 	[FAILED] = "#2d2d2d",   /* wrong password */
     [CAPS] = "#6CA98A",         /* CapsLock on */
 };
 
 /* treat a cleared input like a wrong password (color) */
-static int failonclear = 1;
+static int failonclear = 0;
 
 static int logosize = 50;
 static int logow = 9; /* Grid width and height for right center alignment*/
