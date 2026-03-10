@@ -71,7 +71,7 @@ static int pixelSize=10;
  */
 ResourcePref resources[] = {
         { "user",             STRING,   &user},
-        { "user",             STRING,   &group}
+        { "group",             STRING,   &group},
 		{ "color_background", STRING,   &colorname[BACKGROUND] },
 		{ "color_init",       STRING,   &colorname[INIT] },
 		{ "color_input",      STRING,   &colorname[INPUT] },
