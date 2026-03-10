@@ -1,6 +1,6 @@
 /* user and group to drop privileges to */
-static const char *user  = "mika";
-static const char *group = "wheel";
+static const char *user  = "user";  // <- change this to use slock
+static const char *group = "group"; // <- change this to use slock
 
 static const char *colorname[NUMCOLS] = {
 	[BACKGROUND] =   "black",     /* after initialization */
@@ -70,6 +70,8 @@ static int pixelSize=10;
  * Xresources preferences to load at startup
  */
 ResourcePref resources[] = {
+        { "user",             STRING,   &user},
+        { "user",             STRING,   &group}
 		{ "color_background", STRING,   &colorname[BACKGROUND] },
 		{ "color_init",       STRING,   &colorname[INIT] },
 		{ "color_input",      STRING,   &colorname[INPUT] },
